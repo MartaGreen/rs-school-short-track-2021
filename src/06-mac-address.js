@@ -18,9 +18,10 @@ function isMAC48Address(n) {
   if (arr.length !== 6) return false;
   const answ = arr.every((elem) => (
     elem.length === 2
-      && ((Number.isNaN(elem[0]) && lettersArr.indexOf(elem[0]) !== -1)
-      || !Number.isNaN(elem[0])) && ((Number.isNaN(elem[1]) && lettersArr.indexOf(elem[1]) !== -1)
-      || !Number.isNaN(elem[1]))
+      && ((Number.isNaN(Number(elem[0])) && lettersArr.indexOf(elem[0]) !== -1)
+      || !Number.isNaN(Number(elem[0])))
+      && ((Number.isNaN(Number(elem[1])) && lettersArr.indexOf(elem[1]) !== -1)
+      || !Number.isNaN(Number(elem[1])))
   ));
   return answ;
 }
